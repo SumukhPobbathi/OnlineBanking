@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Mini STatement</title>
+<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css'><script src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script><script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js'></script>
+<style type="text/css">
+body{
+background-image: url('login_back.jpg');
+background-size: cover;
+}
+.bg1{
+		background-color: white;
+  		margin-left: 220px;
+  		margin-right: 220px;
+  		margin-top: 70px;
+  		margin-bottom: 50px;
+  		border-radius: 25px;
+}
+</style>
+</head>
+<body >
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="./afterLogin">Home</a></li>
+    	<li><a href ="EmiCalculator.html">Calculate your EMI</a></li>
+		<li><a href ="FdCalculator.html">Returns on Fixed Deposit</a></li>
+		<li><a href ="RdCalculator.html">Returns on Recurring Deposit</a></li>
+		<li><a href="contact.html"> Contact Us</a><li>
+		<li><a href="logout.jsp">Log Out</a><li>
+		
+    </ul>
+  </div>
+</nav>
+
+<div align="center">
+<form action="./MiniStatement">
+
+	<div class="bg1" align="center">
+	<br><br>
+      	<h2>Enter n for  last 'n' transactions :</h2>
+
+        <input type="number" name="n">
+
+      	<input type="submit"  value="GO"/>
+      	<br><br><br>
+    </div>
+
+</form>
+</div>
+</body>
+</html>
+
+
+
+
+
+
+

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Password Reset Page</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style type="text/css">
+  .bg2{
+  		margin-top:70px;
+  		background-color:  white;
+  		margin-left:420px;
+  		margin-right: 420px;
+  		border-radius: 25px;
+  		
+  	}
+  	body{
+  		background-image: url("login_back.jpg");
+  		background-size: cover;
+  	}
+  	#myProgress {
+  	
+ 	 width: 180px;
+ 	 background-color: #ddd;
+	}
+
+	#myBar {
+	width:1%;
+    height: 30px;
+    background-color: #4CAF50;
+}
+#myProgress1 {
+  	
+ 	 width: 180px;
+ 	 background-color: #ddd;
+	}
+
+	#myBar1 {
+	width:1%;
+    height: 30px;
+    background-color: #4CAF50;
+}
+  
+  </style>
+
+</head>
+<body>
+<nav class="navbar navbar-default nav-bg">
+  <div class="container-fluid">
+    <div class="navbar-header">
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="login.html">Home</a></li>
+    	<li><a href ="EmiCalculator.html">Calculate your EMI</a></li>
+		<li><a href ="FdCalculator.html">Returns on Fixed Deposit</a></li>
+		<li><a href ="RdCalculator.html">Returns on Recurring Deposit</a></li>
+		<li><a href="contact.html"> Contact Us</a><li>
+		
+    </ul>
+  </div>
+</nav>
+
+<div class="bg2" align="center">
+<br><br>
+<form action="./CheckOtp">
+
+<label>Enter new Password</label><br>
+<input type="password" name="pwd" id="pwd" onkeyup="check(this.value)"/><br>
+<div id="myProgress">
+  <div id="myBar"></div>
+</div>
+
+
+<label>Re-Enter new Password</label><br>
+<input type="password" name="repwd" id="repwd" onkeyup="check1(this.value)"/><br>
+<div id="myProgress1">
+  <div id="myBar1"></div>
+</div>
+
+<label>Enter OTP</label><br>
+<input type="text" name="otp"/><br><br>
+
+<input class="btn btn-success" type="submit" value="RESET" />
+<br><br>
+
+</form>
+</div>
+<script type="text/javascript">
+function check(val) {
+	var elem = document.getElementById("myBar");
+
+	var password = val;
+	var score=0;
+	if(password.length>7){
+		elem.style.background="blue";
+		elem.style.width="50%";
+		elem.innerHTML="Medium";
+		
+		if(password.includes("@" || "!" || "#" || "$" || "%")){
+			elem.style.background="green";
+			elem.style.width="100%";
+			elem.innerHTML="Strong";
+			
+			
+		}
+		
+	}
+	else{
+		elem.style.background="red";
+		elem.style.width="5%";
+		elem.innerHTML="Weak";
+	}
+}
+
+function check1(val) {
+	var elem = document.getElementById("myBar1");
+
+	var password = val;
+	var score=0;
+	if(password.length>7){
+		elem.style.background="blue";
+		elem.style.width="50%";
+		
+		if(password.includes("@" || "!" || "#" || "$" || "%")){
+			elem.style.background="green";
+			elem.style.width="100%";
+			
+			
+		}
+		
+	}
+	else{
+		elem.style.background="red";
+		elem.style.width="5%";
+	}
+}
+
+</script>
+</body>
+</html>

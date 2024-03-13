@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="ISO-8859-1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Login Page</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  
+  <style type="text/css">
+  	
+  	.bg2{
+  		background-color:  white;
+  		margin-left:420px;
+  		margin-right: 420px;
+  		border-radius: 25px;
+  		
+  	}
+  	body{
+  		background-image: url("login_back.jpg");
+  		background-size: cover;
+  	}
+  	.bg1{
+  		
+ 		color: white;
+  		font-size: 250%;
+  		font-family: "Times New Roman", Times, serif;
+  	}
+  	/* .nav-bg{
+  		background-color:  #b3e6ff;
+  	} */
+  	input[type=text], select {
+  width: 300px;
+  height : 40px;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  }
+ 	 input[type=password], select {
+  width: 300px;
+  height : 40px;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  }
+  	
+  </style>
+</head>
+
+<body >
+
+<nav class="navbar navbar-default nav-bg">
+  <div class="container-fluid">
+    <div class="navbar-header">
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#">Home</a></li>
+    	<li><a href ="EmiCalculator.html">Calculate your EMI</a></li>
+		<li><a href ="FdCalculator.html">Returns on Fixed Deposit</a></li>
+		<li><a href ="RdCalculator.html">Returns on Recurring Deposit</a></li>
+		<li><a href="contact.html"> Contact Us</a><li>
+		
+    </ul>
+  </div>
+</nav>
+
+	
+	<br><br>
+		<div class=" bg2 rounded mb-0" align="center">
+		<form action="./LoginServlet">	
+		<br>
+		<h2> Customer Login </h2><br>
+		<label class="l1">Enter Login ID </label><br>
+		<input type="text" name="login_id" placeholder="Login ID"/><br>
+		<br>
+		<label class="l1">Enter Password </label><br>
+		<input type="password" name="login_pwd" placeholder="Login Password"><br><br>
+		
+		<input class="btn btn-success" type="submit" value="submit"/><br><br>
+		
+		<a href="Forgot.html">Forgot Password?</a><br><br>
+		
+		<br><br>
+		</form>
+		</div>
+	
+	
+</body>
+</html>

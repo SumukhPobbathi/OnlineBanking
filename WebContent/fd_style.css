@@ -1,0 +1,8 @@
+@CHARSET "ISO-8859-1";
+body{
+	background-image: url('login_back.jpg');
+	background-size: 100%
+}
+input.a {
+	width: 300px;
+}

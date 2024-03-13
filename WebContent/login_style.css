@@ -1,0 +1,57 @@
+@CHARSET "ISO-8859-1";
+
+body {
+	
+	background-image: url('login_back.jpg');
+	background-size: 100%
+}
+div {
+	background-color:   #f2f2f2;
+	height : 350px;
+	border : 2 px olive;
+	padding: 20 px;
+	margin-left: 900px;
+	margin-top: 100px;
+	margin-right: 50px;
+}
+label.abc{
+	margin-bottom: 150 px;
+	font-style: oblique;
+	font-size : 40px;
+	color: blue;
+}
+b {
+	margin-left: 980px;
+	font-size: 50px;
+	margin-top: 500px;
+}
+tooltip {
+  position:relative; /* making the .tooltip span a container for the tooltip text */
+  border-bottom:1px dashed #000; /* little indicater to indicate it's hoverable */
+}
+tooltip:before {
+  content: attr(data-text); /* here's the magic */
+  position:absolute;
+  
+  /* vertically center */
+  top:50%;
+  transform:translateY(-50%);
+  
+  /* move to right */
+  left:100%;
+  margin-left:15px; /* and add a small left margin */
+  
+  /* basic styles */
+  width:200px;
+  padding:10px;
+  border-radius:10px;
+  background:#000;
+  color: #fff;
+  text-align:center;
+
+  display:none; /* hide by default */
+}
+
+tooltip:hover:before {
+  display:block;
+}

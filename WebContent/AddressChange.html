@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Address Change Page</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style type="text/css">
+  	.bg1{
+  	margin-left:200px;
+  	margin-right:200px;
+  		background-color: white;
+  		height: 200px;
+  		margin-top: 100px;
+  		border-radius: 25px;
+  		
+  	}
+  	body{
+  		background-image: url("login_back.jpg");
+  		background-size: cover;
+  	}
+  	
+  	.bg2{
+  		margin-top: 20px;
+  	}
+  	input[type=text], select {
+  width: 200px;
+  height : 100px;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+  </style>
+
+</head>
+<body >
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="./afterLogin">Home</a></li>
+    	<li><a href ="EmiCalculator.html">Calculate your EMI</a></li>
+		<li><a href ="FdCalculator.html">Returns on Fixed Deposit</a></li>
+		<li><a href ="RdCalculator.html">Returns on Recurring Deposit</a></li>
+		<li><a href="contact.html"> Contact Us</a><li>
+		<li class='a'><a href='logout.jsp'>Log Out</a><li>
+		
+    </ul>
+  </div>
+</nav>
+
+	<div align="center" class="bg1">
+	<form action = './AddressChange'>
+		<div class="bg2 form-group" align="center">
+		<label>Enter new Address :</label><br>
+		<input  type='text' name='address'/>
+		<br>
+		<br>
+		<input type='submit' value='change'>
+		</div>
+	</form>
+	</div>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Stop Payment </title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  
+  <style type="text/css">
+  	
+  	
+  	body{
+  		background-image: url("login_back.jpg");
+  		background-size: cover;
+  	}
+  	.bg1{
+  		margin-left: 350px;
+  		margin-right: 350px;
+ 		background-color:white;
+  		font-size: 100%;
+  		font-family: "Times New Roman", Times, serif;
+  		border-radius: 25px;
+  	}
+  	
+  </style>
+
+</head>
+<body>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="./afterLogin">Home</a></li>
+    	<li><a href ="EmiCalculator.html">Calculate your EMI</a></li>
+		<li><a href ="FdCalculator.html">Returns on Fixed Deposit</a></li>
+		<li><a href ="RdCalculator.html">Returns on Recurring Deposit</a></li>
+		<li><a href="contact.html"> Contact Us</a><li>
+		<li class='a'><a href="logout.jsp">Log Out</a><li>
+		
+    </ul>
+  </div>
+</nav>
+
+	
+
+<br><br>
+<div align="center" class="bg1">
+<br>
+<h1>Click OK to stop payment of checks</h1>
+<br>
+
+<form action="./StopPayment1" method="POST">
+<button type="submit" name="val" value="yes">OK</button>
+<button type="submit" name="val" value="no">Cancel</button>
+</form>
+<br>
+</div>
+</body>
+</html>

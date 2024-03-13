@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Annual Statement Page</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style type="text/css">
+  	.bg1{
+  	margin-left:200px;
+  	margin-right:200px;
+  		background-color: white;
+  		height: 200px;
+  		margin-top: 100px;
+  		border-radius: 25px;
+  		
+  	}
+  	body{
+  		background-image: url("login_back.jpg");
+  		background-size: cover;
+  	}
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="./afterLogin">Home</a></li>
+    	<li><a href ="EmiCalculator.html">Calculate your EMI</a></li>
+		<li><a href ="FdCalculator.html">Returns on Fixed Deposit</a></li>
+		<li><a href ="RdCalculator.html">Returns on Recurring Deposit</a></li>
+		<li><a href="contact.html"> Contact Us</a><li>
+		<li><a href="logout.jsp">Log Out</a><li>
+		
+    </ul>
+  </div>
+</nav>
+	
+	<div align="center" class="bg1">
+	<form action="./AnnualStatement">
+	<div align="center"><br><br>
+	<h1>Enter Year for which you want statement</h1>
+	<input type="date" name = "date"/>
+	<input type="submit" value="GO"/>
+	<br>
+	</div>
+	</form>
+	</div>
+</body>
+</html>

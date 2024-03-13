@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+
+<html>
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <title>EMI Calculator></title>	
+<head>
+	<script>
+$(document).ready(function(){
+  $('[data-toggle="tooltip"]').tooltip();   
+});
+</script>
+	<style type="text/css">
+	.bg1{
+  		background-color: white;
+  		margin-left: 220px;
+  		margin-right: 200px;
+  		margin-top: 70px;
+  		
+  	}
+  	.bg2{
+  		background-color: white;
+  		margin-left: 200px;
+  		margin-right: 200px;
+  		margin-top: 70px;
+  		
+  	}
+  	.bg3{
+  		border-right-color : black;
+  		margin-left:220px;
+  		margin-right:200px;
+  		background-color: white;
+  		margin-top: 15px;
+  		
+  	}
+  	.p1{
+  		font-size: 150%;
+  	}
+  	body{
+  		background-image: url("login_back.jpg");
+  		background-size: cover;
+  	}
+  	.l1{
+  		float: left;
+  	}
+  	input[type=text], select {
+  width: 100px;
+  height : 25px;
+  padding: 12px 20px;
+  margin-left:200px;
+  margin-bottom:20px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+	</style>
+
+</head>
+
+<body >
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="login.html">Home</a></li>
+    	<li><a href ="EmiCalculator.html">Calculate your EMI</a></li>
+		<li><a href ="FdCalculator.html">Returns on Fixed Deposit</a></li>
+		<li><a href ="RdCalculator.html">Returns on Recurring Deposit</a></li>
+		<li><a href="contact.html"> Contact Us</a><li>
+		
+    </ul>
+  </div>
+</nav>
+
+<div align="center" class="bg1">									
+	<h1 align="center" >EMI Calculator</h1> 	<!--Header  -->
+	
+	
+<div align="center" class="bg2">
+
+<label class="l1" > Enter the Loan Amount </label>
+<input type="text" value="" id="a"/>				<!-- first label  -->
+<input type="range" min="10000" max="500000"  onchange="updateTextInput1(this.value)">					<!-- number input to enter loan amount(principle) -->
+<label > (in INR)</label>
+
+<br>
+
+<label class="l1"> Enter The Interest Rate</label>				<!-- rate of interest in % -->
+<input type="text" value="" id="b" />
+<input type="range" min="5" max="12" step="0.5" onchange="updateTextInput2(this.value)">	
+<label > (in % on monthly basis)</label>
+<br>
+
+<label class="l1"> Enter The tenure of Loan </label>				<!-- Loan tenure in months -->
+<input type="text" value="" id="c"/>
+<input type="range" min="6" max="60" onchange="updateTextInput3(this.value)">
+<label> (in months)</label>
+<br>
+<button id="submit" align="center">Submit</button>		<!--Submit button 	 -->
+</div>
+
+</div>
+
+<div  align="center"  class="row bg3">
+<div class="col-sm-4">
+<p id="d" class='p1'>    </p>
+</div>
+ 
+<div class="col-sm-4 ">
+<p id="e" class='p1'>    </p>
+</div>
+
+<div class="col-sm-4 " >
+<p id="f" class='p1'>    </p>
+</div>
+
+
+</div>
+<script>													<!-- JavaScript begins here-->
+function updateTextInput1(val) {
+	document.getElementById('a').value=val;
+}
+function updateTextInput2(val) {
+	document.getElementById('b').value=val;
+}
+function updateTextInput3(val) {
+	document.getElementById('c').value=val;
+}
+
+
+var rate = parseFloat();									<!-- Integers with float value here are declared for calculations-->
+var  loanamount=parseFloat(0);
+var  n=parseFloat(0);
+var  temp1=parseFloat(0);
+var  temp2=parseFloat;
+var  temp3=parseFloat;
+var  temp4=parseFloat;
+
+
+var ppbutton = document.getElementById("submit");			<!-- button given onclick attribute-->
+ppbutton.addEventListener("click", submit);
+
+
+
+function submit(){											<!-- Oncliclick submit button this function will execute -->
+
+loanamount = document.getElementById("a").value;		<!-- getting user input value of loan amount and storing in 'loanamount' -->
+
+rate = document.getElementById("b").value;			<!--getting user input value of rate of interest and storing it in 'rate' -->
+	
+n = document.getElementById("c").value;					<!--getting user input value of number of months and storing in 'n' -->
+
+if(a==0) {												<!-- This will envoke if loan amount fild is left empty-->
+alert("loan amount cannot be empty")
+location.reload();
+}
+if(b==0) {
+alert("Rate of Interest cannot be empty")						<!-- This will envoke if rate of interest feild is left empty-->
+location.reload();
+}
+if(c==0) {
+alert("Number of months cannot be empty")						<!-- THis will envoke if number of months field is left empty -->
+location.reload();
+}
+	
+var  rate1 = parseFloat(rate/100);								<!-- ROI is divided by 100 to get actual number-->
+
+var rate2 = parseFloat(rate1 + 1);								<!-- to elaborate the emi formula I have divided the whole formula into bits instead of doing it all in one line -->
+	
+temp1 = Math.pow(rate2,n);
+
+temp2 = temp1 - 1;
+
+temp3 = temp1 / temp2;
+
+var emi = Math.round(loanamount*rate1*temp3);					<!-- Emi is calculated here-->
+
+ 
+
+var total = Math.round(emi * n);								<!-- Total amount payable is EMI x Number of Emis-->
+
+var interest = Math.round(total - loanamount);					<!-- Interest above principle amount is Total minus Loan amount -->
+
+document.getElementById("d").innerHTML = "The monthly EMI is Rs:  "+ emi ;
+document.getElementById("e").innerHTML= "The interest payable at "+ rate+"% is : " + interest ;
+document.getElementById("f").innerHTML= "Total Payment is : " + total;
+
+<!-- This is final Output -->
+
+
+}
+</script>
+</body>
+</html>

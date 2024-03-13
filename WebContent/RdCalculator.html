@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<link rel ="stylesheet" href = "fd_style.css"> 
+<title>RD Calculator</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	<style type="text/css">
+	.bg1{
+  		background-color: white;
+  		margin-left: 220px;
+  		margin-right: 200px;
+  		margin-top: 70px;
+  		
+  	}
+  	.bg2{
+  		background-color: white;
+  		margin-left: 200px;
+  		margin-right: 200px;
+  		margin-top: 50px;
+  		
+  	}
+  	.bg3{
+  		border-right-color : black;
+  		margin-left:220px;
+  		margin-right:200px;
+  		background-color: white;
+  		margin-top: 15px;
+  		margin-bottom: 100px;
+  		
+  	}
+  	.p1{
+  		font-size: 150%;
+  	}
+  	body{
+  		background-image: url("login_back.jpg");
+  		background-size: cover;
+  		
+  	}
+  	.l1{
+  		float: left;
+  	}
+	</style>
+	
+</head>
+<body>
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="login.html">Home</a></li>
+    	<li><a href ="EmiCalculator.html">Calculate your EMI</a></li>
+		<li><a href ="FdCalculator.html">Returns on Fixed Deposit</a></li>
+		<li><a href ="RdCalculator.html">Returns on Recurring Deposit</a></li>
+		<li><a href="contact.html"> Contact Us</a><li>
+		
+    </ul>
+  </div>
+</nav>
+
+<div align="center" class="bg1">
+<h1>Recurring Deposit Calculator</h1>
+
+<div align="center" class="bg2">
+  <label for="amount" class="l1">Regular Monthly Deposit</label><br>
+  <input class="a" type="range" id="amount" name="amount" min="500" max="50000" onchange="updateTextInput1(this.value)" />
+ <br>
+  <input type="number" id="textInput1" value="">(in Rs.)
+  <br><br>
+  
+  
+  <label  for="month" class="l1">Investment Tenure (in months)</label><br>
+  <input class="a" type="range" id="month" name="month" min="6" max="60" onchange="updateTextInput2(this.value)" list="tickmarks2"/>
+   <datalist id="tickmarks2">
+  
+  <option value="6"></option>
+  <option value="9"></option>
+  <option value="12"></option>
+  <option value="18"></option>
+  <option value="24"></option>
+  <option value="30"></option>
+  <option value="36"></option>
+  <option value="48"></option>
+  <option value="60"></option>
+  </datalist>
+  <br>
+  <input type="text" id="textInput2" value="".>(in months)<br><br>
+  
+  
+  <label for="rate" class="l1">Rate of Interest(in %)</label><br>
+  <input class="a" type="range" id="rate" name="rate" min="5" max="9" onchange="updateTextInput3(this.value)" list="tickmarks3"/>
+   <datalist id="tickmarks3">
+  
+  <option value="5"></option>
+  <option value="5.5"></option>
+  <option value="6"></option>
+  <option value="6.5"></option>
+  <option value="7"></option>
+  <option value="7.5"></option>
+  <option value="8"></option>
+  <option value="8.5"></option>
+  <option value="9"></option>
+  </datalist>
+  <br>
+  <input type="text" id="textInput3" value=""/>(in % yearly)<br><br>
+  
+  
+  
+  <input type="submit" onclick="submit()">
+	</div>
+	</div>
+	<div align="center" class="bg3">
+	<div >
+	<p id="abc" class="p1"></p>
+	</div>
+	</div>
+<script type="text/javascript">
+
+function updateTextInput1(val) {
+    document.getElementById('textInput1').value=val; 
+  }
+function updateTextInput2(val) {
+    document.getElementById('textInput2').value=val; 
+  }
+function updateTextInput3(val) {
+    document.getElementById('textInput3').value=val; 
+  }
+ function submit() {
+	var  amount = parseFloat(document.getElementById("textInput1").value);
+	var month =parseFloat (document.getElementById("textInput2").value);
+	 var rate = parseFloat (document.getElementById("textInput3").value);
+	 
+	 if(amount==0) {												<!-- This will envoke if loan amount fild is left empty-->
+	 alert("amount field cannot be empty")
+	 location.reload();
+	 }
+	 
+	 if(month==0) {												<!-- This will envoke if loan amount fild is left empty-->
+	 alert("Month field cannot be empty")
+	 location.reload();
+	 }
+	 
+	 if(rate==0) {												<!-- This will envoke if loan amount fild is left empty-->
+	 alert("rate field cannot be empty")
+	 location.reload();
+	 }
+	 var result = parseFloat(0);
+	 var rate1 = parseFloat(rate/100);
+	 var month1 = month;
+	 while(month1>0){
+	 
+	 var years = parseFloat(month/12);
+	 month1--;
+	 var rn = parseFloat(rate1/4);
+	 var temp1 = parseFloat(Math.pow(1+rn,4*years));
+	 result = result + parseFloat(amount*temp1);
+	 }
+	 
+	/*  document.getElementById("abc").innerHTML ="The Total amount at maturity is "+total_amount+
+	 "\n<br>The interest payable to you at " + rate+" %  for "+month+" months is " + total_interest ; */
+	 document.getElementById("abc").innerHTML = "By end of " +month +" months you will get Rs."+ Math.round(result);
+}
+
+
+</script>
+</body>
+</html>

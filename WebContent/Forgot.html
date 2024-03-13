@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Forgot Password</title>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style type="text/css">
+  .bg2{
+  		margin-top:70px;
+  		background-color:  white;
+  		margin-left:420px;
+  		margin-right: 420px;
+  		border-radius: 25px;
+  		height: 230px;
+  		
+  	}
+  	body{
+  		background-image: url("login_back.jpg");
+  		background-size: cover;
+  	}
+  
+  </style>
+</head>
+<body >
+<nav class="navbar navbar-default nav-bg">
+  <div class="container-fluid">
+    <div class="navbar-header">
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="login.html">Home</a></li>
+    	<li><a href ="EmiCalculator.html">Calculate your EMI</a></li>
+		<li><a href ="FdCalculator.html">Returns on Fixed Deposit</a></li>
+		<li><a href ="RdCalculator.html">Returns on Recurring Deposit</a></li>
+		<li><a href="contact.html"> Contact Us</a><li>
+		
+    </ul>
+  </div>
+</nav>
+
+<div align="center" class="bg2">
+<br><br><br><br>
+<form action="./SendOtp">
+<label >Enter Login ID</label><br> 
+<input  type="text" name="loginid" placeholder="Login ID"/><br><br>
+<input class="btn btn-success"  type="submit" value="Get OTP"/>
+</form>
+</div>
+</body>
+</html>
